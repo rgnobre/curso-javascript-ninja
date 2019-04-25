@@ -4,29 +4,35 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
+function soma (a , b) {
+return a + b;
+}
+
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
+var result = soma(3, 1) + 5;
 
 // Qual o valor atualizado dessa variável?
-?
+9
 
 // Declare uma nova variável, sem valor.
-?
+var myvar;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+function newValor(myvar){
+myvar = 'Valor';
+return myvar;
+}
 
 // Invoque a função criada acima.
-?
+newValor(myvar)
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+'Valor'
 
 /*
 Crie uma função com as seguintes características:
@@ -35,19 +41,27 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+function Valida(x1, x2, x3){
+
+if((x1 == null) || (x2 == null) || (x3 == null)){
+return 'Preencha todos os valores corretamente!'
+}else{
+return (x1 * x2 * x3) + 2
+}
+
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+Valida(2,2)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+'Preencha todos os valores corretamente!'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+Valida(1,2,3)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+8
 
 /*
 Crie uma função com as seguintes características:
@@ -58,8 +72,29 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+function valida(a , b , c){
+... if((a != null) && (b != null) && (c != null)){
+..... return ((a + b) / c);
+..... } else if (( a != null) && (b == null) && (c == null)){
+..... return a;
+.....  } else if (( b != null) && (a == null) && (c == null)){
+..... return b;
+.....  } else if (( c != null) && (a == null) && (a == null)){
+..... return c;
+..... } else if ((a != null) && (b != null)){
+..... return a + b;
+..... } else if ((a != null ) && ( c != null)){
+..... return a + c;
+..... } else if ((b != null ) && ( c != null)){
+..... return b + c;
+..... } else{
+..... return null;
+..... }
+... }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 ?
-```
+valida() //null
+valida(1,2,3) //1
+valida(2) //2
+valida(2,3) // 5
